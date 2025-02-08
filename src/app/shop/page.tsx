@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Products from "@/components/Home/Products";
+import Products from "@/components/home/Products"; // Fixed import path
 
 export default function ShopPage() {
   return (
