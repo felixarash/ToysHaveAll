@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
   },
   // Add performance optimizations
   experimental: {
-    optimizeImages: true,
     scrollRestoration: true,
   },
   // Enable compression
