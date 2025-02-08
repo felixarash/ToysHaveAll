@@ -11,7 +11,7 @@ export default function Header() {
       ${isMenuOpen ? 'bg-purple-500/90' : 'bg-white/10'} backdrop-blur-sm`}>
       <nav className="max-w-7xl mx-auto flex justify-between items-center">
         <Link href="/" className="text-3xl font-bold text-gray-900 animate-bounce">
-          🧸 ToyLand
+          🧸 ToysHaveAll
         </Link>
 
         {/* Mobile menu button */}
