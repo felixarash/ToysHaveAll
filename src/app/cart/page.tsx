@@ -7,11 +7,11 @@ export default function CartPage() {
   const { items, removeItem, updateQuantity, total } = useCart();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-400 via-pink-300 to-blue-300">
-      <main className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
+    <div className="bg-gradient-to-b from-purple-400 via-pink-300 to-blue-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
         <Link 
           href="/"
-          className="inline-flex items-center text-white mb-8 hover:text-yellow-300 transition-colors"
+          className="inline-flex items-center text-gray-900 mb-8 hover:text-gray-700 transition-colors"
         >
           <svg 
             className="w-5 h-5 mr-2" 
@@ -29,7 +29,7 @@ export default function CartPage() {
           Back to Home
         </Link>
 
-        <h1 className="text-4xl font-bold text-white mb-8">Shopping Cart</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
         
         {items.length === 0 ? (
           <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 text-center">
@@ -106,7 +106,7 @@ export default function CartPage() {
             </div>
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }
