@@ -14,20 +14,16 @@ export default function ProductCard({ id, name, price, image }: ProductCardProps
   const { addItem } = useCart();
 
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 
-      transform hover:-translate-y-2 transition-all duration-300 shadow-md">
+    <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4">
       <div className="aspect-square relative mb-2 overflow-hidden rounded-lg">
-        {image ? (
-          <Image
-            src={image}
-            alt={name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        ) : (
-          <div className="w-full h-full bg-white/50 rounded-lg animate-pulse" />
-        )}
+        <Image
+          src={image}
+          alt={name}
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transform hover:scale-105 transition-transform duration-300"
+        />
       </div>
       <div className="space-y-2">
         <h3 className="text-gray-900 font-semibold">{name}</h3>
