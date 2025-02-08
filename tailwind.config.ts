@@ -1,36 +1,4 @@
 import type { Config } from "tailwindcss";
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  images: {
-    domains: ['localhost'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
-  },
-  // Add performance optimizations
-  experimental: {
-    scrollRestoration: true,
-  },
-  // Enable compression
-  compress: true,
-  // Add PWA capabilities
-  pwa: {
-    dest: 'public',
-    disable: process.env.NODE_ENV === 'development',
-  },
-  // Optimize builds
-  swcMinify: true,
-  reactStrictMode: true,
-  poweredByHeader: false,
-};
-
-export default nextConfig;
-
-import type { Config } from "tailwindcss";
 
 export default {
   content: [
