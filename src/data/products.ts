@@ -16,19 +16,19 @@ export const productData: Product[] = [
     id: 2,
     name: "Building Blocks Set",
     price: "$29.99",
-    image: "/toys/blocks.jpg"
+    image: "/toys/blocks.webp"
   },
   {
     id: 3,
     name: "Action Figure",
     price: "$15.99",
-    image: "/toys/action.jpg"
+    image: "/toys/actions.webp"
   },
   {
     id: 4,
     name: "Board Game",
     price: "$24.99",
-    image: "/toys/board.jpg"
+    image: "/toys/board.webp"
   }
   // Add more products as needed
 ];
