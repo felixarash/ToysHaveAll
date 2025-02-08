@@ -1,7 +1,8 @@
 'use client';
 
-import Link from "next/link";
-import { useCart } from "@/context/CartContext";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, total } = useCart();
@@ -49,7 +50,15 @@ export default function CartPage() {
                 <div key={item.id} 
                   className="bg-white/80 backdrop-blur-sm rounded-lg p-4 flex items-center gap-4"
                 >
-                  <div className="w-24 h-24 bg-white/50 rounded-md flex-shrink-0" />
+                  <div className="w-24 h-24 relative rounded-md flex-shrink-0 overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                      sizes="96px"
+                    />
+                  </div>
                   <div className="flex-grow">
                     <h3 className="text-gray-900 font-medium">{item.name}</h3>
                     <p className="text-gray-800">{item.price}</p>
