@@ -30,6 +30,8 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 
+import type { Config } from "tailwindcss";
+
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
