@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
-import LoadingSpinner from '@/components/ui/LoadingSpinner';
 
 export default function SideCart() {
   const { items, removeItem, updateQuantity, total, isOpen, setIsOpen } = useCart();
