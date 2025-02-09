@@ -1,4 +1,4 @@
-# ToyLand E-commerce
+# ToysHaveAll E-commerce
 
 A modern e-commerce platform for toys built with Next.js and TypeScript.
 
