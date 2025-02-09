@@ -80,6 +80,9 @@ body {
 @layer base {
   :root {
     --sidebar-width: clamp(280px, 85vw, 450px);
+    --header-height: 80px;
+    --cart-width: min(400px, 85vw);
+    --cart-height: calc(100vh - var(--header-height));
   }
 }
 
@@ -93,11 +96,11 @@ body {
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgba(156, 163, 175, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
 }
 
@@ -124,4 +127,65 @@ input:focus, textarea:focus {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Add to existing globals.css */
+@layer utilities {
+  .gradient-background {
+    @apply bg-gradient-to-b from-purple-400/95 via-pink-300/95 to-blue-300/95;
+  }
+}
+
+/* Cart animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive cart styles */
+.cart-container {
+  position: fixed;
+  right: 0;
+  top: var(--header-height);
+  width: var(--cart-width);
+  height: var(--cart-height);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cart-container.open {
+  transform: translateX(0);
+}
+
+/* Custom scrollbar for cart */
+.cart-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+  -webkit-overflow-scrolling: touch;
+}
+
+.cart-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cart-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cart-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
 }
